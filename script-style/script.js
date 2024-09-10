@@ -57,6 +57,7 @@ document.querySelectorAll("section").forEach((section) => {
   sectionObserver.observe(section);
 });
 
+// Minified and optimized JavaScript
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.getElementById("main-header");
   const navLinks = document.querySelectorAll(".nav-link");
