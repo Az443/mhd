@@ -94,10 +94,11 @@ const modalImg = document.getElementById("modalImg");
 const closeBtn = document.getElementsByClassName("close")[0];
 
 // Select all images inside the .plans_images container
-const images = document.querySelectorAll(".plans_images img");
-
-// Add click event to each image
+const images = document.querySelectorAll(
+  ".plans_images img, .portfolio-item img"
+);
 images.forEach((img) => {
+  img.setAttribute("loading", "lazy"); // إضافة تحميل كسول
   img.onclick = function () {
     modal.style.display = "flex";
     modalImg.src = this.src;
@@ -108,3 +109,38 @@ images.forEach((img) => {
 closeBtn.onclick = function () {
   modal.style.display = "none";
 };
+
+document.addEventListener("DOMContentLoaded", function () {
+  const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+  const mainNav = document.querySelector(".main-nav");
+
+  mobileMenuToggle.addEventListener("click", function () {
+    mainNav.classList.toggle("active");
+  });
+
+  // Close modal when clicking outside the image
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImg");
+  const closeBtn = document.querySelector(".modal .close");
+
+  closeBtn.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+
+  // Add click event to images in the plans section
+  const images = document.querySelectorAll(
+    ".plans_images img, .portfolio-item img"
+  ); // Add .portfolio-item img
+  images.forEach((img) => {
+    img.onclick = function () {
+      modal.style.display = "flex";
+      modalImg.src = this.src;
+    };
+  });
+});
