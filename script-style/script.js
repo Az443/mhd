@@ -14,6 +14,9 @@ gsap.to("#logo-text span", {
   duration: 0.5,
   ease: "power2.inOut",
 });
+// تعريف المتغير sections
+const sections = document.querySelectorAll("section");
+
 // Smooth scrolling and active link update
 const navLinks = document.querySelectorAll("nav ul li a");
 navLinks.forEach((link) => {
@@ -136,6 +139,9 @@ document.addEventListener("DOMContentLoaded", () => {
   updateActiveLink();
   updateHeaderBackground();
 });
+
+// تعريف المتغير portfolioItems
+const portfolioItems = document.querySelectorAll(".portfolio-item");
 
 // Hover animation (keep your existing code)
 portfolioItems.forEach((item) => {
