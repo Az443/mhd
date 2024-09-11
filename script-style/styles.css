@@ -366,7 +366,8 @@ footer {
 .portfolio-item {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 3 / 4;
+  cursor: pointer;
 }
 
 .image-frame {
@@ -386,7 +387,7 @@ footer {
 }
 
 .image-frame:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .portfolio-filter {
